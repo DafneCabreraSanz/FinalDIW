@@ -1,4 +1,10 @@
-// Servicios ofrecidos
+// ========================================
+// DATOS SIMULADOS PARA LA AGENCIA DIGITAL
+// ========================================
+// Este archivo contiene arrays de datos usados en toda la aplicación
+// Se puede reemplazar con datos de un servidor/API en el futuro
+
+// SERVICIOS: 6 servicios principales ofrecidos por la agencia
 export const services = [
   {
     id: 1,
@@ -36,9 +42,7 @@ export const services = [
     title: 'Email Marketing',
     description: 'Campañas de email personalizadas que generan conversiones y fidelizan a tus clientes.',
   },
-];
-
-// Métricas de confianza
+]; \n\n// MÉTRICAS: Estadísticas y logros de la agencia para generar confianza
 export const trustMetrics = [
   {
     id: 1,

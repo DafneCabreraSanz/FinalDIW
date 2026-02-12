@@ -22,3 +22,6 @@ El sistema de diseño se basa en:
 - **Espaciados y layout:** Uso de utilidades Tailwind para márgenes, paddings y grids, asegurando consistencia y adaptabilidad en todos los dispositivos.
 
 ---
+
+## Figma: 
+https://www.figma.com/proto/7d0SRQ2Aj3pT2fxvdhRH2r/Mockup?node-id=0-1&t=AfON1psaz7g004Wl-1

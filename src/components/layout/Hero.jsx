@@ -1,3 +1,9 @@
+// Componente Hero: Banner principal rotativo con 3 slides
+// Contiene:
+// - Títulos y descripciones rotativas
+// - Imagen de fondo
+// - Botones de navegación anterior/siguiente
+
 import React, { useState } from 'react';
 import Button from '../ui/Button';
 import carrouselArriba from '../../img/carrouselArriba.jpeg';
@@ -5,8 +11,13 @@ import carrouselArriba2 from '../../img/carrouselArriba2.jpeg';
 import carrouselArriba3 from '../../img/carrouselArriba3.png';
 
 const Hero = () => {
+  // Índice del slide actual (0-2)
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Array de imágenes para el carrusel
   const images = [carrouselArriba, carrouselArriba2, carrouselArriba3];
+  
+  // Array de contenido para cada slide (título y descripción)
   const slides = [
     {
       title: "Impulsa tu marca al siguiente nivel",
@@ -22,15 +33,18 @@ const Hero = () => {
     }
   ];
 
+  // Función que avanza al siguiente slide (cicla desde el último al primero)
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+  // Función que retrocede al slide anterior (cicla desde el primero al último)
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
+    // Sección hero con imagen de fondo
     <section
       id="home"
       style={{
@@ -39,7 +53,7 @@ const Hero = () => {
       className="relative min-h-[400px] flex items-start justify-center pt-36 pb-12"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative h-full flex flex-col items-center justify-start gap-12">
-        {/* Previous button */}
+        {/* Botón para ir al slide anterior */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white dark:bg-neutral-700 rounded-full shadow-lg hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors z-10"

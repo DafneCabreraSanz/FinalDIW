@@ -1,45 +1,56 @@
+// Componente Navbar: Barra de navegación superior fija
+// Contiene:
+// - Barra superior con horario animado
+// - Logo responsive
+// - Links de navegación (desktop)
+// - Iconos de búsqueda, usuario, carrito
+// - Botón para cambiar modo oscuro/claro
+// - Menú móvil responsive
+
 import React, { useState, useEffect } from 'react';
 import logoHeader from '../../img/logoHeader.jpeg';
 import logoF from '../../img/logoF.png';
 
 const Navbar = ({ onToggleDarkMode, theme }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkClass, setIsDarkClass] = useState(false);
+  // Estado para mostrar/ocultar menú móvil\n  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Estado para saber si modo oscuro está activo (observa cambios en el DOM)\n  const [isDarkClass, setIsDarkClass] = useState(false);
 
+  // Efecto que observa cambios en la clase 'dark' del HTML
   useEffect(() => {
     const checkDark = () => {
       setIsDarkClass(document.documentElement.classList.contains('dark'));
     };
     checkDark();
-    const observer = new MutationObserver(checkDark);
+    // MutationObserver monitorea cambios en los atributos del elemento root\n    const observer = new MutationObserver(checkDark);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => observer.disconnect();
   }, []);
 
-  const navLinks = [
+  // Links de navegación principal\n  const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Nosotros', href: '#nosotros' },
     { name: 'Servicios', href: '#servicios' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
+  // Función que retorna el icono según el tema actual
   const getThemeIcon = () => {
     if (theme === 'light') {
-      return (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      // Icono de sol (modo claro)\n      return (
+        <svg className=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">
+          <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z\" />
         </svg>
       );
     } else if (theme === 'dark') {
-      return (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      // Icono de luna (modo oscuro)\n      return (
+        <svg className=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">
+          <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z\" />
         </svg>
       );
     } else {
-      return (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      // Icono de monitor/sistema (auto)\n      return (
+        <svg className=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">
+          <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" />
         </svg>
       );
     }
