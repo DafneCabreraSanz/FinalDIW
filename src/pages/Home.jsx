@@ -18,10 +18,13 @@ const Home = () => {
       {/* SECCIÓN 1: Galería de 3 imágenes grandes */}
       <Section background="default" padding="sm">
         {/* Grid responsivo: 1 columna en móvil, 3 en desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 animate-slide-in-up">
           {/* Mapea las 3 imágenes y las muestra en tarjetas */}
           {[primeraFoto, segundaFoto, terceraFoto].map((img, index) => (
-            <div key={index} className="aspect-[3/4] bg-white dark:bg-neutral-800 border-2 border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden">
+            <div 
+              key={index} 
+              className="aspect-[3/4] image-zoom bg-white dark:bg-neutral-800 border-2 border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden hover-lift"
+            >
               <img src={img} alt="Servicio" className="w-full h-full object-cover" />
             </div>
           ))}

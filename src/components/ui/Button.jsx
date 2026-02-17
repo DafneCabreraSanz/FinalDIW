@@ -33,7 +33,7 @@ function Button(props) {
     lg: 'px-8 py-4 text-lg',
   };
 
-  const finalClass = baseStyles + ' ' + variants[variant] + ' ' + sizes[size] + ' ' + className;
+  const finalClass = baseStyles + ' btn-cta ' + variants[variant] + ' ' + sizes[size] + ' ' + className;
 
   return (
     <button

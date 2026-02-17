@@ -90,7 +90,7 @@ const Navbar = ({ onToggleDarkMode, theme }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="hover:opacity-70 transition-opacity text-[var(--texto)] dark:text-white"
+                className="nav-link text-[var(--texto)] dark:text-white font-medium"
               >
                 {link.name}
               </a>

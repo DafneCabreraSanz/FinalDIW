@@ -49,8 +49,14 @@ const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="rounded-lg p-8 flex flex-col shadow-md bg-white text-texto dark:bg-neutral-800 dark:text-white"
+            className="rounded-lg p-8 flex flex-col shadow-md bg-white text-texto dark:bg-neutral-800 dark:text-white hover-lift animate-slide-in-up relative border-l-4"
+            style={{ borderLeftColor: 'var(--secciones)', animationDelay: `${index * 0.1}s` }}
           >
+            {/* Comilla decorativa */}
+            <div className="absolute -top-2 -left-1 text-6xl opacity-10 text-neutral-400">
+              "
+            </div>
+
             {/* Estrellas de calificación */}
             <div className="flex gap-1 mb-4">
               {[...Array(testimonial.rating)].map((_, i) => (
@@ -59,18 +65,18 @@ const Testimonials = () => {
             </div>
 
             {/* Texto del comentario */}
-            <p className="mb-6 flex-grow text-sm leading-relaxed text-black dark:text-white">
+            <p className="mb-6 flex-grow text-base leading-relaxed text-black dark:text-white italic">
               "{testimonial.comment}"
             </p>
 
             {/* Información del autor */}
-            <div className="border-t pt-4 border-texto">
+            <div className="border-t pt-4 border-neutral-300 dark:border-neutral-700 mt-auto">
               {/* Nombre */}
-              <p className="font-bold text-sm text-black dark:text-white">
+              <p className="font-bold text-base text-black dark:text-white">
                 {testimonial.name}
               </p>
               {/* Cargo/Rol */}
-              <p className="text-xs text-black dark:text-white">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 {testimonial.role}
               </p>
             </div>

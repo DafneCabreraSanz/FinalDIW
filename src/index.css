@@ -48,4 +48,162 @@
   .animate-scroll {
     animation: scroll 35s linear infinite;
   }
+
+  /* Animación fade in para contenido */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.5s ease-out;
+  }
+
+  /* Animación de entrada suave */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  /* Efecto hover elevación */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-2;
+  }
+
+  /* Efecto zoom en imagen */
+  .image-zoom {
+    @apply overflow-hidden rounded-lg;
+  }
+
+  .image-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .image-zoom:hover img {
+    @apply scale-110;
+  }
+
+  /* Efecto glow en botones */
+  .btn-glow {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-glow:hover {
+    @apply shadow-lg scale-105;
+  }
+
+  /* Línea decorativa */
+  .divider-gradient {
+    @apply h-1 bg-gradient-to-r from-transparent via-gray-400 to-transparent;
+  }
+
+  /* Animación de scroll - aparición de elementos */
+  @keyframes scrollFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-fade-in {
+    animation: scrollFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+  }
+
+  /* Navegación suave */
+  .nav-link {
+    @apply relative transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Efecto parallax sutil */
+  .parallax-hero {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: 768px) {
+    .parallax-hero {
+      background-attachment: scroll;
+    }
+  }
+
+  /* Icono animado */
+  .icon-bounce {
+    @apply transition-all duration-300;
+  }
+
+  .icon-bounce:hover {
+    @apply scale-110 -translate-y-1;
+  }
+
+  /* Botones CTA mejorados */
+  .btn-cta {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-cta::before {
+    content: '';
+    @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+    z-index: 1;
+  }
+
+  .btn-cta:hover {
+    @apply shadow-2xl -translate-y-1;
+  }
+
+  .btn-cta:hover::before {
+    @apply opacity-10;
+  }
+
+  /* Efecto ripple en links */
+  .ripple-link {
+    @apply relative transition-all duration-300 hover:text-white;
+  }
+
+  .ripple-link::before {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-current opacity-0 scale-0 transition-all duration-500;
+  }
+
+  .ripple-link:hover::before {
+    @apply scale-150 opacity-20;
+  }
 }
