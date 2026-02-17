@@ -1,7 +1,7 @@
 // Componente ImageCarousel: Carrusel de imágenes con navegación
 // Muestra 1 imagen a la vez con botones prev/next e indicadores de puntos
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import carrouselAbajo from '../../img/carrouselAbajo.jpeg';
 import segundaCarrousel from '../../img/segundaCarrousel.jpeg';
 import terceraCarrousel from '../../img/terceraCarrousel.jpeg';

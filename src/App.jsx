@@ -8,7 +8,6 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import Testimonials from './components/layout/Testimonials';
 import VideoButton from './components/layout/VideoButton';
-import Section from './components/ui/Section';
 
 function App() {
   // Hook personalizado que gestiona el tema oscuro/claro y lo persiste en localStorage

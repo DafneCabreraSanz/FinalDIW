@@ -4,7 +4,7 @@
 // - Imagen de fondo
 // - Botones de navegación anterior/siguiente
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from '../ui/Button';
 import carrouselArriba from '../../img/carrouselArriba.jpeg';
 import carrouselArriba2 from '../../img/carrouselArriba2.jpeg';

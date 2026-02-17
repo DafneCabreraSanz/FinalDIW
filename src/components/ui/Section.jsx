@@ -3,8 +3,6 @@
 // Soporta fondos: default, gray, primary, gradient
 // Soporta padding: none, sm, default, lg
 
-import React from 'react';
-
 const Section = ({
   // Contenido de la sección
   children,

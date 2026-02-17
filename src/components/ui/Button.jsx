@@ -2,18 +2,12 @@
 // Soporta 4 variantes: primary, secondary, accent, outline
 // Soporta 3 tamaños: sm, md, lg
 
-import React from 'react';
+function Button(props) {
+  const children = props.children;
+  const variant = props.variant || 'primary';
+  const size = props.size || 'md';
+  const className = props.className || '';
 
-const Button = ({
-  children,
-  // Variante de estilo del botón
-  variant = 'primary',
-  // Tamaño del botón
-  size = 'md',
-  // Clases CSS adicionales
-  className = '',
-  ...props
-}) => {
   // Estilos base aplicados a todos los botones
   const baseStyles = 'font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
@@ -39,14 +33,18 @@ const Button = ({
     lg: 'px-8 py-4 text-lg',
   };
 
+  const finalClass = baseStyles + ' ' + variants[variant] + ' ' + sizes[size] + ' ' + className;
+
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...props}
+      className={finalClass}
+      onClick={props.onClick}
+      disabled={props.disabled}
+      type={props.type}
     >
       {children}
     </button>
   );
-};
+}
 
 export default Button;

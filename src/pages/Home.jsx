@@ -3,7 +3,6 @@
 // 2. Sección de 5 servicios principales
 // 3. Carrusel de imágenes con navegación
 
-import React from 'react';
 import Section from '../components/ui/Section';
 import Heading from '../components/ui/Heading';
 import Card from '../components/layout/Card';

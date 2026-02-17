@@ -1,7 +1,6 @@
 // Componente Testimonials: Sección de testimonios de clientes
 // Muestra 4 comentarios con calificaciones de 5 estrellas
 
-import React from 'react';
 import Section from '../ui/Section';
 import Heading from '../ui/Heading';
 

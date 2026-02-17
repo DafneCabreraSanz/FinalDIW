@@ -5,7 +5,6 @@
 // - Links legales y sociales (derecha)
 // - Créditos al pie
 
-import React from 'react';
 import logoF from '../../img/logoF.png';
 
 const Footer = () => {

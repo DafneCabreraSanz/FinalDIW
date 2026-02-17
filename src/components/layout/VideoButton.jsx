@@ -1,7 +1,7 @@
 // Componente VideoButton: Botón para abrir un video promocional en modal
 // Abre un modal overlay superpuesto cuando se hace clic
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from '../ui/Button';
 
 const VideoButton = () => {
@@ -14,8 +14,8 @@ const VideoButton = () => {
       {/* Botón que abre el modal */}
       <Button
         onClick={() => setShowVideo(true)}
-        className="mx-auto block"
-        style={{ backgroundColor: 'var(--footer)', color: 'var(--texto-horario-footer)' }}
+        className="mx-auto block !bg-[#7e593d] !text-white"
+        style={{ padding: '12px 32px', fontSize: '16px', fontWeight: 'bold' }}
       >
         Ver video
       </Button>

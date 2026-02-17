@@ -42,7 +42,7 @@ export const services = [
     title: 'Email Marketing',
     description: 'Campañas de email personalizadas que generan conversiones y fidelizan a tus clientes.',
   },
-]; \n\n// MÉTRICAS: Estadísticas y logros de la agencia para generar confianza
+]; // MÉTRICAS: Estadísticas y logros de la agencia para generar confianza
 export const trustMetrics = [
   {
     id: 1,

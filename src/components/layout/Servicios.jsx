@@ -1,7 +1,6 @@
 // Componente que muestra 5 servicios principales en un grid
 // Cada servicio tiene un icono/logo y nombre descriptivo
 
-import React from 'react';
 import logo from '../../img/Logo.jpeg';
 import logo2 from '../../img/Logo (2).jpeg';
 import logo3 from '../../img/Logo3.jpeg';

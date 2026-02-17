@@ -2,45 +2,47 @@
 // Genera etiquetas h1 a h6 con estilos predefinidos
 // Soporta modo gradiente para colores multicolor
 
-import React from 'react';
+function Heading(props) {
+  const level = props.level || 1;
+  const children = props.children;
+  const className = props.className || '';
+  const gradient = props.gradient || false;
 
-const Heading = ({
-  // Nivel de encabezado: 1-6 (genera h1, h2, ... h6)
-  level = 1,
-  // Contenido del encabezado
-  children,
-  // Clases CSS adicionales
-  className = '',
-  // Si se debe aplicar gradiente de colores
-  gradient = false,
-  ...props
-}) => {
   // Genera la etiqueta dinámica (h1, h2, etc.)
-  const Tag = `h${level}`;
+  const Tag = 'h' + level;
 
   // Estilos de tamaño para cada nivel
-  const styles = {
-    h1: 'text-4xl md:text-5xl lg:text-6xl font-bold font-heading',
-    h2: 'text-3xl md:text-4xl lg:text-5xl font-bold font-heading',
-    h3: 'text-2xl md:text-3xl lg:text-4xl font-semibold font-heading',
-    h4: 'text-xl md:text-2xl font-semibold font-heading',
-    h5: 'text-lg md:text-xl font-semibold font-heading',
-    h6: 'text-base md:text-lg font-semibold font-heading',
-  };
+  const styles = {};
+  styles.h1 = 'text-4xl md:text-5xl lg:text-6xl font-bold font-heading';
+  styles.h2 = 'text-3xl md:text-4xl lg:text-5xl font-bold font-heading';
+  styles.h3 = 'text-2xl md:text-3xl lg:text-4xl font-semibold font-heading';
+  styles.h4 = 'text-xl md:text-2xl font-semibold font-heading';
+  styles.h5 = 'text-lg md:text-xl font-semibold font-heading';
+  styles.h6 = 'text-base md:text-lg font-semibold font-heading';
 
   // Aplica gradiente de colores si está habilitado
-  const gradientClass = gradient
-    ? 'bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent'
-    : 'text-neutral-900 dark:text-neutral-50';
+  let gradientClass;
+  if (gradient === true) {
+    gradientClass = 'bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent';
+  } else {
+    gradientClass = 'text-neutral-900 dark:text-neutral-50';
+  }
 
-  return (
-    <Tag
-      className={`${styles[Tag]} ${gradientClass} ${className}`}
-      {...props}
-    >
-      {children}
-    </Tag>
-  );
-};
+  const finalClass = styles[Tag] + ' ' + gradientClass + ' ' + className;
+
+  if (Tag === 'h1') {
+    return <h1 className={finalClass}>{children}</h1>;
+  } else if (Tag === 'h2') {
+    return <h2 className={finalClass}>{children}</h2>;
+  } else if (Tag === 'h3') {
+    return <h3 className={finalClass}>{children}</h3>;
+  } else if (Tag === 'h4') {
+    return <h4 className={finalClass}>{children}</h4>;
+  } else if (Tag === 'h5') {
+    return <h5 className={finalClass}>{children}</h5>;
+  } else if (Tag === 'h6') {
+    return <h6 className={finalClass}>{children}</h6>;
+  }
+}
 
 export default Heading;

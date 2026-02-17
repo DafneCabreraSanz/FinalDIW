@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importar fuente personalizada */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
-/* Colores */
+/* Variables CSS para los colores del tema claro */
 :root {
-  /* Mode 1 */
-  /* color */
   --fondo: #ffffff;
   --footer: #7e593d;
   --horario: #7e593d;
@@ -16,13 +15,12 @@
   --texto-horario-footer: #ffffff;
 }
 
-/* Font */
+/* Variables CSS para la tipografía */
 :root {
-  /* Mode 1 */
-  /* string */
   --tipo-de-texto: Architects Daughter;
 }
 
+/* Estilos base aplicados a todos los elementos */
 @layer base {
   body {
     background-color: var(--fondo);
@@ -32,16 +30,21 @@
   }
 }
 
+/* Animaciones y utilidades personalizadas */
 @layer utilities {
+
+  /* Animación de scroll infinito para la barra de horario */
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
   }
 
+  /* Clase para aplicar la animación de scroll */
   .animate-scroll {
     animation: scroll 35s linear infinite;
   }

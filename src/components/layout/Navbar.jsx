@@ -1,3 +1,10 @@
+// Componente Navbar: Barra de navegación
+// Contiene:
+// - Barra superior con horario animado
+// - Logo y navegación
+// - Botones de búsqueda, usuario, carrito y tema
+// - Menú móvil colapsable
+
 import React, { useState, useEffect } from 'react';
 import logoHeader from '../../img/logoHeader.jpeg';
 import logoF from '../../img/logoF.png';

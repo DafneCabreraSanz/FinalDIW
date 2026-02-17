@@ -2,8 +2,6 @@
 // Muestra contenido con icono, título y descripción
 // Soporta 3 variantes: default, gradient, hover
 
-import React from 'react';
-
 const Card = ({ 
   // Ícono emoji o similar
   icon, 

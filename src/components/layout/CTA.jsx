@@ -1,4 +1,7 @@
-import React from 'react';
+// Componente CTA: Llamada a la Acción
+// Sección destacada con título, descripción y 2 botones
+// Soporta diferentes fondos: gradient, primary, secondary
+
 import Button from '../ui/Button';
 import Heading from '../ui/Heading';
 
